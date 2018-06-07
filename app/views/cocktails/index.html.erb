@@ -1,0 +1,20 @@
+<h1> Find our 🍺🍻 selection below:</h1>
+
+<div class="button-add">
+  <button>
+    <a href="cocktails/new">Add new beer</a>
+  </button>
+</div>
+
+<br>
+
+<div class="cocktail-list">
+
+  <% @cocktails.each do |cocktail| %>
+
+  <%= link_to cocktail_path(cocktail.id) do %>
+   <p><%= cocktail.name %></p>
+  <% end %>
+
+<% end %>
+</div>
