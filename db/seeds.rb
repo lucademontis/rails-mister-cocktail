@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#gotta destroy doses first because it's created on the cocktail and ingredient
+# foreign key = true in the migration
+Dose.destroy_all
 Cocktail.destroy_all
 Ingredient.destroy_all
-Dose.destroy_all
 
 puts 'Creating cocktails...'
 

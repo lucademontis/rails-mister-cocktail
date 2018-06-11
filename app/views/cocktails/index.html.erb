@@ -1,20 +1,19 @@
-<h1> Find our 🍺🍻 selection below:</h1>
 
-<div class="button-add">
-  <button>
-    <a href="cocktails/new">Add new beer</a>
-  </button>
-</div>
 
-<br>
+<h1 class="text-center"> My Selection of cocktails: </h1>
 
-<div class="cocktail-list">
+  <div class="container">
+    <div class="row">
+    <% @cocktails.each_with_index do |cocktail, index| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: url(<%= image_path("co#{index}.jpeg") %>;">
+          <%= link_to cocktail_path(cocktail.id) do %>
+            <p class="card-description"><%= cocktail.name %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
 
-  <% @cocktails.each do |cocktail| %>
 
-  <%= link_to cocktail_path(cocktail.id) do %>
-   <p><%= cocktail.name %></p>
-  <% end %>
-
-<% end %>
-</div>

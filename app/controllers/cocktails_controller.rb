@@ -1,6 +1,9 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :destroy]
 
+  def home
+  end
+
   def index
     @cocktails = Cocktail.all
   end
